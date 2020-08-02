@@ -14,13 +14,22 @@ export class HomeComponent implements OnInit {
         "June", "July", "August", "September",
         "October", "November", "December"];
 
-  isavilable = true; //variable is set to true
-
+  isavailable = false; //variable is set to true
   constructor(private _empService:EmployeeService) { }
 
   ngOnInit(): void {
     console.log(this._empService)
   }
 
+  myClickFunction(event)  {
+    //just added console.log which will display the event details in browser on click of the button.
+    alert("Show Me");
+    console.log(event)
+    this.isavailable = false;
+  }
 
+  changeMonth(event){
+    alert("Changed month from the Dropdown");
+    console.log(event);
+  }
 }
